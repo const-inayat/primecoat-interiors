@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PrimeCoat Interiors | Painting Contractor in Shaheen Bagh, New Delhi</title>
-<meta name="description" content="PrimeCoat Interiors does interior and exterior painting, putty and wall preparation, and site painting in Delhi. Call or WhatsApp for a free quote.">
+<meta name="description" content="10+ years of experience. PrimeCoat Interiors does interior and exterior painting, putty and wall preparation, and site painting in Delhi. Call or WhatsApp for a free quote.">
 <meta property="og:title" content="PrimeCoat Interiors | Painting Contractor, New Delhi">
 <meta property="og:description" content="Interior and exterior painting for homes and construction sites. Message us on WhatsApp for a quote.">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HousePainter","name":"PrimeCoat Interiors","telephone":"+918800961972","address":{"@type":"PostalAddress","streetAddress":"C301/1, Shaheen Bagh","addressLocality":"New Delhi","postalCode":"110025","addressCountry":"IN"},"areaServed":"Delhi NCR"}
+{"@context":"https://schema.org","@type":"HousePainter","name":"PrimeCoat Interiors","telephone":"+918800961972","address":{"@type":"PostalAddress","streetAddress":"Shaheen Bagh","addressLocality":"New Delhi","postalCode":"110025","addressCountry":"IN"},"areaServed":"Delhi NCR"}
 </script>
 <style>
 :root{
@@ -57,6 +57,18 @@ section{padding:56px 0}
 .services li{padding:18px 0;border-top:1px solid var(--line)}
 .services li:last-child{border-bottom:1px solid var(--line)}
 .services p{color:var(--ink-soft);margin-top:4px}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.gallery button{padding:0;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit;display:block;width:100%}
+.gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;display:block;background:var(--line)}
+.gallery span{display:block;font-size:.95rem;margin-top:6px;color:var(--ink-soft)}
+dialog{border:0;padding:0;background:none;max-width:94vw;max-height:92vh}
+dialog::backdrop{background:rgba(10,20,24,.85)}
+dialog img{max-width:94vw;max-height:80vh;border-radius:10px;display:block;margin:0 auto}
+dialog p{color:#fff;text-align:center;margin:10px 0}
+dialog .btn{background:#fff;display:block;margin:0 auto;padding:9px 20px}
+.about{display:grid;gap:24px;align-items:center}
+.about img{width:100%;max-width:320px;aspect-ratio:4/5;object-fit:cover;object-position:center 55%;border-radius:14px}
+.about p{color:var(--ink-soft);max-width:34em;margin-top:10px}
 .steps{list-style:none;padding:0;counter-reset:s;display:grid;gap:18px}
 .steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
 .steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--accent);font:800 1.1rem var(--head);display:flex;align-items:center;justify-content:center}
@@ -67,8 +79,10 @@ input,select,textarea{font:1rem var(--body);padding:12px;border:1.5px solid var(
 .contact{display:grid;gap:24px}
 .contact p{margin-bottom:6px}
 footer{background:var(--ink);color:#d8e2e5;padding:26px 0;font-size:.95rem}
-.float{position:fixed;right:16px;bottom:16px;z-index:5;border-radius:999px;padding:14px 20px;box-shadow:0 4px 14px rgba(0,0,0,.25);text-decoration:none;background:var(--wa);color:#fff;font-weight:600}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;border-radius:999px;padding:14px 20px;box-shadow:0 4px 14px rgba(0,0,0,.25);text-decoration:none;background:var(--wa);color:#fff;font-weight:600}
 @media(min-width:760px){
+  .gallery{grid-template-columns:repeat(3,1fr);gap:16px}
+  .about{grid-template-columns:320px 1fr;gap:40px}
   .hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center}
   .wall{min-height:380px}
   .contact{grid-template-columns:1fr 1fr}
@@ -92,7 +106,7 @@ footer{background:var(--ink);color:#d8e2e5;padding:26px 0;font-size:.95rem}
     <div class="wrap">
       <div>
         <h1>Clean lines. Even coats. A finish that lasts.</h1>
-        <p class="lead">PrimeCoat Interiors paints homes, shops and construction sites across Delhi. Tell us about your walls and we’ll send you a clear quote.</p>
+        <p class="lead">PrimeCoat Interiors has 10+ years of experience painting homes, shops and construction sites across Delhi. Tell us about your walls and we’ll send you a clear quote.</p>
         <div class="cta">
           <a class="btn btn-wa" href="https://wa.me/918800961972?text=Hello%20PrimeCoat%20Interiors%2C%20I%20need%20a%20painting%20quote.">Get a quote on WhatsApp</a>
           <a class="btn" href="#services">See services</a>
@@ -118,8 +132,35 @@ footer{background:var(--ink);color:#d8e2e5;padding:26px 0;font-size:.95rem}
         <li><h3>Putty and wall preparation</h3><p>Crack filling, putty, sanding and primer so the paint sits smooth and holds longer.</p></li>
         <li><h3>Texture and decorative finishes</h3><p>Accent walls and textured finishes to give a room its own look.</p></li>
         <li><h3>Construction site painting</h3><p>Painting for new buildings and flats, billed by measured, completed work.</p></li>
+        <li><h3>Murals and special finishes</h3><p>Kids’ room murals, wall art and metallic finishes.</p></li>
         <li><h3>Repainting and touch-ups</h3><p>Fresh coats before moving in, after tenants leave, or before a festival.</p></li>
       </ul>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Our work</h2>
+      <p class="sub">A few sample projects. Tap a photo to see it larger.</p>
+      <div class="gallery">
+        <button type="button" data-cap="Panel wall and ceiling finish"><img src="images/work1.jpg" width="750" height="1000" loading="lazy" alt="White panel-moulding wall with wall lights and painted ceiling"><span>Panel wall and ceiling finish</span></button>
+        <button type="button" data-cap="Textured and coloured feature walls"><img src="images/work2.jpg" width="1000" height="750" loading="lazy" alt="Textured copper-toned wall panels beside a deep green fluted wall"><span>Textured and coloured walls</span></button>
+        <button type="button" data-cap="Decorative statue finish"><img src="images/work3.jpg" width="750" height="1000" loading="lazy" alt="Decorative statue painted white in front of lit copper shelves"><span>Decorative statue finish</span></button>
+        <button type="button" data-cap="Clean white interior"><img src="images/work4.jpg" width="750" height="1000" loading="lazy" alt="Freshly painted white hallway with ceiling cove lights"><span>Clean white interior</span></button>
+        <button type="button" data-cap="Kids’ room mural"><img src="images/work5.jpg" width="1000" height="750" loading="lazy" alt="Kids’ room wall mural with a rainbow, rocket and planets"><span>Kids’ room mural</span></button>
+        <button type="button" data-cap="Metallic copper finish"><img src="images/work6.jpg" width="750" height="1000" loading="lazy" alt="Close-up of a brushed antique copper metallic finish"><span>Metallic copper finish</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="about">
+    <div class="wrap about">
+      <img src="images/profile.jpg" width="750" height="1000" loading="lazy" alt="PrimeCoat Interiors painter on site">
+      <div>
+        <h2>10+ years of painting experience</h2>
+        <p>PrimeCoat Interiors has been painting homes, shops and construction sites in Delhi for more than ten years. From small touch-ups to full site painting, we focus on neat edges, even coats and a tidy cleanup.</p>
+        <p>Message us on WhatsApp with photos of your walls and we will tell you what the job needs.</p>
+      </div>
     </div>
   </section>
 
@@ -151,6 +192,7 @@ footer{background:var(--ink);color:#d8e2e5;padding:26px 0;font-size:.95rem}
             <option>Putty and wall preparation</option>
             <option>Texture and decorative finish</option>
             <option>Construction site painting</option>
+            <option>Mural or special finish</option>
             <option>Repainting or touch-up</option>
           </select>
         </label>
@@ -179,6 +221,8 @@ footer{background:var(--ink);color:#d8e2e5;padding:26px 0;font-size:.95rem}
   <div class="wrap">© <span id="yr">2026</span> PrimeCoat Interiors, New Delhi. Painting contractor.</div>
 </footer>
 
+<dialog id="lb"><img id="lbImg" alt=""><p id="lbCap"></p><button class="btn" type="button" id="lbClose">Close</button></dialog>
+
 <a class="float" href="https://wa.me/918800961972?text=Hello%20PrimeCoat%20Interiors%2C%20I%20need%20a%20painting%20quote." aria-label="Chat on WhatsApp">WhatsApp</a>
 
 <script>
@@ -196,6 +240,18 @@ footer{background:var(--ink);color:#d8e2e5;padding:26px 0;font-size:.95rem}
     };
     box.appendChild(b);
   });
+  var lb=document.getElementById("lb");
+  document.querySelectorAll(".gallery button").forEach(function(b){
+    b.addEventListener("click",function(){
+      var im=b.querySelector("img");
+      document.getElementById("lbImg").src=im.src;
+      document.getElementById("lbImg").alt=im.alt;
+      document.getElementById("lbCap").textContent=b.dataset.cap;
+      lb.showModal();
+    });
+  });
+  document.getElementById("lbClose").onclick=function(){lb.close()};
+  lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
   document.getElementById("yr").textContent=new Date().getFullYear();
   document.getElementById("quoteForm").addEventListener("submit",function(e){
     e.preventDefault();
