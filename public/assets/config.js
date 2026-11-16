@@ -6,5 +6,5 @@ window.PC = {
   instagramDm: 'https://ig.me/m/primecoatinteriors2026',
   // TODO: replace with your exact Facebook page link (open your page > ... > Copy link).
   // Until then this opens a search for "PrimeCoat Interiors" on Facebook.
-  facebook: 'https://www.facebook.com/search/top?q=PrimeCoat%20Interiors',
+  facebook: 'https://www.facebook.com/PrimeCoatInteriors2026/',
 };
