@@ -110,3 +110,58 @@ export function youtubeId(url) {
     return null;
   }
 }
+
+// ---------- e-sign (quotations and invoices signed through a private link) ----------
+
+// The billing app runs on your own computer and calls these endpoints from the browser.
+export const ESIGN_CORS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type, X-Api-Key',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Max-Age': '86400',
+};
+
+export const TOKEN_RE = /^[A-Za-z0-9_-]{43}$/;
+
+export function newToken() {
+  const b = crypto.getRandomValues(new Uint8Array(32));
+  let s = '';
+  for (const x of b) s += String.fromCharCode(x);
+  return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+/** Storage key for a signing link. Only a hash of the token is used, never the token itself. */
+export async function tokenKey(token) {
+  return 'esign:' + hex(await crypto.subtle.digest('SHA-256', enc.encode(token)));
+}
+
+export async function sha256Hex(text) {
+  return hex(await crypto.subtle.digest('SHA-256', enc.encode(text)));
+}
+
+/** True when the request carries the e-sign password you set as ESIGN_API_KEY. */
+export async function apiKeyOk(request, env) {
+  const key = env.ESIGN_API_KEY;
+  if (!key || key.length < 24) return false;
+  const given = request.headers.get('X-Api-Key') || '';
+  const [a, b] = await Promise.all([
+    crypto.subtle.digest('SHA-256', enc.encode(given)),
+    crypto.subtle.digest('SHA-256', enc.encode(key)),
+  ]);
+  return safeEqual(hex(a), hex(b));
+}
+
+export function esignJson(data, status = 200, extra = {}) {
+  return json(data, status, { ...ESIGN_CORS, ...extra });
+}
+
+/** Free Cloudflare rate limiter, if it is set up in wrangler.jsonc. Never blocks when it is missing. */
+export async function rateOk(env, key) {
+  if (!env.LOGIN_LIMIT) return true;
+  try {
+    const { success } = await env.LOGIN_LIMIT.limit({ key });
+    return success;
+  } catch (e) {
+    return true;
+  }
+}
