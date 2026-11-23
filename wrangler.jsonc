@@ -17,7 +17,7 @@
   // Where posts, photos and videos are stored.
   // Replace the id with YOUR namespace id: Workers & Pages > KV > primecoat > copy the ID.
   "kv_namespaces": [
-    { "binding": "KV", "id": "PASTE_YOUR_KV_NAMESPACE_ID_HERE" }
+    { "binding": "KV", "id": "827232c239be450d8c3ea49ff337e194" }
   ],
 
   // Free login protection built into Cloudflare Workers: 5 login attempts per minute.
