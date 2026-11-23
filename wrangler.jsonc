@@ -1,0 +1,31 @@
+{
+  // Must match the Worker name shown in your Cloudflare dashboard.
+  "name": "primecoat-interiors",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-09-01",
+
+  // The website (public pages, images, admin page).
+  // Only /api/*, /media/* and the private signing links (/s/*) run Worker code. Every other address is answered by the static
+  // files alone, so bots probing random URLs do not use your free Worker requests.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*", "/media/*", "/s/*"]
+  },
+
+  // Where posts, photos and videos are stored.
+  // Replace the id with YOUR namespace id: Workers & Pages > KV > primecoat > copy the ID.
+  "kv_namespaces": [
+    { "binding": "KV", "id": "PASTE_YOUR_KV_NAMESPACE_ID_HERE" }
+  ],
+
+  // Free login protection built into Cloudflare Workers: 5 login attempts per minute.
+  // If your deploy ever fails with an error about "ratelimits", delete this block (the site still works).
+  "ratelimits": [
+    { "name": "LOGIN_LIMIT", "namespace_id": "1001", "simple": { "limit": 5, "period": 60 } }
+  ],
+
+  // Keep settings you add in the dashboard (like your secrets) when deploying.
+  "keep_vars": true
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | PrimeCoat Interiors</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="adm">
+<main>
+  <div class="bar">
+    <h1>PrimeCoat admin</h1>
+    <div id="topbtns" hidden>
+      <a class="btn small" href="/work.html" target="_blank" rel="noopener">View website</a>
+      <button class="btn small" type="button" id="logout">Log out</button>
+    </div>
+  </div>
+
+  <section class="panel" id="loginBox" hidden>
+    <h2>Log in</h2>
+    <form id="loginForm" class="form">
+      <label>Password<input type="password" id="pw" autocomplete="current-password" required></label>
+      <p class="notice err" id="loginErr" hidden></p>
+      <button class="btn btn-dark" type="submit">Log in</button>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <section class="panel">
+      <h2>Post new work</h2>
+      <form id="postForm" class="grid2">
+        <label>Title<input id="title" maxlength="120" required placeholder="e.g. 3 BHK interior, Okhla"></label>
+        <label>Category<select id="category"></select></label>
+        <label>Location (optional)<input id="location" maxlength="120"></label>
+        <label class="wide">Description (optional)<textarea id="description" rows="3" maxlength="2000"></textarea></label>
+        <label class="wide">Photos and short videos
+          <input type="file" id="files" multiple accept="image/jpeg,image/png,image/webp,video/mp4,video/webm,video/quicktime">
+        </label>
+        <label class="wide">YouTube link for a longer video (optional, one per line)
+          <textarea id="youtube" rows="2" placeholder="https://youtu.be/..."></textarea>
+        </label>
+        <p class="hint wide">Photos are resized automatically on your phone before upload. Videos can be up to 25 MB. For longer videos, upload them to YouTube (you can set them to Unlisted) and paste the link above. New posts show on the website within about a minute.</p>
+        <div class="wide">
+          <p class="notice err" id="postErr" hidden></p>
+          <p class="notice ok" id="postOk" hidden></p>
+          <ul class="log" id="log"></ul>
+          <button class="btn btn-dark" type="submit" id="publishBtn">Publish to website</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Your posts</h2>
+      <p class="hint" id="listStatus"></p>
+      <ul class="plist" id="plist"></ul>
+      <p><button class="btn small" type="button" id="moreAdm" hidden>Load more</button></p>
+    </section>
+
+    <section class="panel">
+      <h2>Backup and restore</h2>
+      <p class="hint">Your posts, photos and videos live in Cloudflare storage. Download a backup now and then, and keep it somewhere safe (your computer, Google Drive). If anything is ever lost, restore from it here.</p>
+      <p class="notice ok" id="bkOk" hidden></p>
+      <p class="notice err" id="bkErr" hidden></p>
+      <ul class="log" id="bkLog"></ul>
+      <div class="cta">
+        <button class="btn btn-dark" type="button" id="backupBtn">Download backup</button>
+        <label class="btn" for="restoreFile" id="restoreLabel">Restore from a backup file</label>
+        <input type="file" id="restoreFile" accept=".zip,application/zip" hidden>
+      </div>
+      <p class="hint">Restoring only adds what is missing. It never deletes anything, so it is safe to run twice. A restore uses some of your free daily upload allowance (roughly 1,000 files a day).</p>
+    </section>
+  </div>
+</main>
+
+<dialog id="editDlg">
+  <form id="editForm" class="form">
+    <h2>Edit post</h2>
+    <label>Title<input id="eTitle" maxlength="120" required></label>
+    <label>Category<select id="eCategory"></select></label>
+    <label>Location<input id="eLocation" maxlength="120"></label>
+    <label>Description<textarea id="eDescription" rows="3" maxlength="2000"></textarea></label>
+    <p class="notice err" id="eErr" hidden></p>
+    <div class="cta">
+      <button class="btn btn-primary" type="submit">Save</button>
+      <button class="btn" type="button" id="eCancel">Cancel</button>
+    </div>
+  </form>
+</dialog>
+<script src="/assets/admin.js" defer></script>
+</body>
+</html>
